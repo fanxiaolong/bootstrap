@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap 101 Template</title>
+
+  <!-- Bootstrap -->
+  <link href="../dist/css/bootstrap.css" rel="stylesheet">
+  <link href="../dist/css/bootstrap-theme.css" rel="stylesheet">
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="../js/tests/vendor/jquery.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="../dist/js/bootstrap.js"></script>
+</head>
+<body>
+<ul class="nav nav-tabs" id="myTab">
+  <li class="active"><a data-toggle="tab" href="#home">首页</a></li>
+  <li class=""><a data-toggle="tab" href="#profile">个人资料</a></li>
+  <li class="dropdown">    <!-- 单击"我的书籍"时，弹出下拉菜单 -->
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">我的书籍
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li><a data-toggle="tab" href="#dropdown1">JavaScript编程精解</a></li>
+      <li><a data-toggle="tab" href="#dropdown2">JavaScript设计模式</a></li>
+      <li><a data-toggle="tab" href="#dropdown3">JavaScript启示录</a></li>
+      <li><a data-toggle="tab" href="#dropdown4">深入理解Bootstrap</a></li>
+    </ul>
+  </li>
+</ul>
+<div class="tab-content" id="myTabContent">
+  <div id="home" class="tab-pane fade active in"><p>单击"首页"时显示该区域</p></div>
+  <div id="profile" class="tab-pane fade"><p>单击"个人资料"时显示该区域</p></div>
+  <div id="dropdown1" class="tab-pane fade"><p>单击"JavaScript编程精解"时显示该区域</p></div>
+  <div id="dropdown2" class="tab-pane fade"><p>单击"JavaScript设计模式"时显示该区域</p></div>
+  <div id="dropdown3" class="tab-pane fade"><p>单击"JavaScript启示录"时显示该区域</p></div>
+  <div id="dropdown4" class="tab-pane fade"><p>单击"深入理解Bootstrap3"时显示该区域</p></div>
+</div>
+
+</body>
+</html>

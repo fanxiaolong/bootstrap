@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../dist/css/bootstrap.css" rel="stylesheet">
+    <link href="../dist/css/bootstrap-theme.css" rel="stylesheet">
+    <script src="../js/tests/vendor/jquery.js"></script>
+    <script src="../js/transition.js"></script>
+    <script src="../js/dropdown.js"></script>
+    <script src="../js/tab.js"></script>
+    <style>
+        .bs-example {
+            border-color: #e5e5e5 #eee #eee;
+            border-style: solid;
+            border-width: 1px 0;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05) inset;
+            margin: 15px;
+            padding: 45px 15px 15px;
+            position: relative;
+            width: 800px;
+        }
+    </style>
+</head>
+<body>
+<div class="bs-example bs-example-tabs">
+    <ul role="tablist" class="nav nav-tabs" id="myTab">
+        <li role="presentation">
+            <a aria-expanded="false" aria-controls="home" data-toggle="tab" role="tab" id="home-tab" href="#home">Home</a>
+        </li>
+        <li role="presentation" class="active">
+            <a aria-controls="profile" data-toggle="tab" id="profile-tab" role="tab" href="#profile" aria-expanded="true">Profile</a>
+        </li>
+        <li class="dropdown" role="presentation">
+            <a aria-controls="myTabDrop1-contents" data-toggle="dropdown" class="dropdown-toggle" id="myTabDrop1" href="#" aria-expanded="false">Dropdown <span class="caret"></span></a>
+            <ul id="myTabDrop1-contents" aria-labelledby="myTabDrop1" role="menu" class="dropdown-menu">
+                <li>
+                    <a aria-controls="dropdown1" data-toggle="tab" id="dropdown1-tab" role="tab" tabindex="-1" href="#dropdown1" aria-expanded="false">@fat</a>
+                </li>
+                <li>
+                    <a aria-controls="dropdown2" data-toggle="tab" id="dropdown2-tab" role="tab" tabindex="-1" href="#dropdown2" aria-expanded="false">@mdo</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+        <div aria-labelledby="home-tab" id="home" class="tab-pane fade" role="tabpanel">
+            <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro
+                synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher
+                retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid.
+                Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate
+                nisi qui.
+            </p>
+        </div>
+        <div aria-labelledby="profile-tab" id="profile" class="tab-pane fade active in" role="tabpanel">
+            <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1
+                labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft
+                beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad
+                vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar
+                helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes
+                anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party
+                scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.
+            </p>
+        </div>
+        <div aria-labelledby="dropdown1-tab" id="dropdown1" class="tab-pane fade" role="tabpanel">
+            <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro
+                fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone
+                skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings
+                gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork
+                biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl
+                craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.
+            </p>
+        </div>
+        <div aria-labelledby="dropdown2-tab" id="dropdown2" class="tab-pane fade" role="tabpanel">
+            <p>Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master
+                cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party
+                locavore wolf cliche high life echo park Austin. Cred vinyl keffiyeh DIY salvia PBR, banh mi before they
+                sold out farm-to-table VHS viral locavore cosby sweater. Lomo wolf viral, mustache readymade thundercats
+                keffiyeh craft beer marfa ethical. Wolf salvia freegan, sartorial keffiyeh echo park vegan.
+            </p>
+        </div>
+    </div>
+</div>
+<script>
+    $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+        alert("我要等10秒钟才执行！");
+    })
+</script>
+</body>
+</html>

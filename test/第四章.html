@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <link href="../dist/css/bootstrap.css" rel="stylesheet">
+    <link href="../dist/css/bootstrap-theme.css" rel="stylesheet">
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../js/tests/vendor/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../dist/js/bootstrap.js"></script>
+    <script>
+        $(document).on("click", "a", function (e) {
+            e.preventDefault();
+        })
+    </script>
+</head>
+<body>
+
+</body>
+<div class="btn-toolbar">
+    <div class="btn-group">
+        <a class="btn btn-default" href="#"><span class="glyphicon glyphicon-align-left"></span></a>
+        <a class="btn btn-default" href="#"><span class="glyphicon glyphicon-align-center"></span></a>
+        <a class="btn btn-default" href="#"><span class="glyphicon glyphicon-align-right"></span></a>
+        <a class="btn btn-default" href="#"><span class="glyphicon glyphicon-align-justify"></span></a>
+    </div>
+</div>
+
+
+<div class="btn-group">
+    <a class="btn btn-default btn-primary" href="#">
+        <span class="glyphicon glyphicon-user"></span>User
+    </a>
+    <a class="btn btn-default btn-primary dropdown-toggle" data-toggle="dropdown" href="#">
+        <span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu">
+        <li><a href="#"><span class="glyphicon glyphicon-pencil"></span>Edit</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-trash"></span>Delete</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-ban-circle"></span>Ban</a></li>
+        <li class="divider"></li>
+        <li><a href="#">Make admin</a></li>
+    </ul>
+</div>
+
+<a class="btn btn-default btn-large" href="#">
+    <span class="glyphicon glyphicon-star"></span> Star
+</a>
+<a class="btn btn-default btn-small" href="#">
+    <span class="glyphicon glyphicon-star"></span>
+</a>
+
+
+<div class="control-group">
+    <div class="controls">
+        <div class=" input-group">
+            <span class=" input-group-addon">
+                <span class="glyphicon glyphicon-envelope"></span>
+             </span>
+            <input class="col col-lg-2 form-control" id=" inputIcon" type="text">
+        </div>
+    </div>
+</div>
+
+<span class="glyphicon glyphicon-glass"></span>
+<span class="glyphicon">&#xe001</span>
+
+
+<div class="dropdown  clearfix">
+    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+        <li><a tabindex="-1" href="#">Action</a></li>
+        <li><a tabindex="-1" href="#">Another action</a></li>
+        <li><a tabindex="-1" href="#">Something else here</a></li>
+        <li class="divider"></li>
+        <li><a tabindex="-1" href="#">Separated link</a></li>
+    </ul>
+</div>
+
+<div class="clearfix"></div>
+<div class="dropdown  clearfix">
+    <ul aria-labelledby="dropdownMenu2" role="menu" class="dropdown-menu pull-right">
+        <li class="dropdown-header" role="presentation">翻译图书</li>
+        <li role="presentation" class="active"><a href="#" tabindex="-1" role="menuitem">JavaScript编程精解</a></li>
+        <li role="presentation" class="disabled"><a href="#" tabindex="-1" role="menuitem">JavaScript设计模式</a></li>
+        <li role="presentation"><a href="#" tabindex="-1" role="menuitem">JavaScript启示录</a></li>
+        <li role="presentation"><a href="#" tabindex="-1" role="menuitem">Backbone应用开发指南</a></li>
+        <li role="presentation" class="divider"></li>
+        <li role="presentation" class="dropdown-header">原创图书</li>
+        <li role="presentation"><a href="#" tabindex="-1" role="menuitem">深入理解Bootstrap</a></li>
+        <li role="presentation" class="dropdown-submenu pull-left">
+            <a tabindex="-1" href="#">More options</a>
+            <ul class="dropdown-menu">
+                <li><a tabindex="-1" href="#">二级菜单项</a></li>
+                <li><a tabindex="-1" href="#">二级菜单项</a></li>
+                <li><a tabindex="-1" href="#">二级菜单项</a></li>
+                <li><a tabindex="-1" href="#">二级菜单项</a></li>
+                <li><a tabindex="-1" href="#">二级菜单项</a></li>
+            </ul>
+        </li>
+
+    </ul>
+</div>
+
+<div class="clearfix"></div>
+<!-- 第一种方式 -->
+<div class="btn-group">
+    <button type="button" class="btn btn-default">Left</button>
+    <button type="button" class="btn btn-default">Middle</button>
+    <button type="button" class="btn btn-default">Right</button>
+</div>
+<!-- 第二种方式 -->
+<div class="btn-group">
+    <a class="btn btn-default">Left</a>
+    <a class="btn btn-default">Middle</a>
+    <a class="btn btn-default">Right</a>
+</div>
+
+
+<div class="btn-group">
+    <button class="btn btn-default" type="button">首页</button>
+    <button class="btn btn-default" type="button">个人简介</button>
+    <button class="btn btn-default" type="button">作品</button>
+    <div class="btn-group">
+        <button data-toggle="dropdown" class="btn btn-default dropdown-toggle" type="button">
+            图书<span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+            <li><a href="#">JavaScript编程精解</a></li>
+            <li><a href="#">JavaScript设计模式</a></li>
+            <li><a href="#">JavaScript启示录</a></li>
+        </ul>
+    </div>
+</div>
+    <div class="row">
+        <div class="col-lg-3">
+            <div class=" input-group"><span class=" input-group-addon"><input type="checkbox"></span> <input type="text"
+                                                                                                             class="form-control">
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class=" input-group"><span class=" input-group-addon"><input type="radio"></span> <input type="text"
+                                                                                                          class="form-control">
+            </div>
+        </div>
+    </div>
+
+<div>
+    <div class="row">
+        <div class="col-lg-6">
+            <div class=" input-group">
+            <span class=" input-group-btn">
+                <button class="btn btn-default" type="button">Go!</button>
+            </span>
+                <input type="text" class="form-control">
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class=" input-group"><input type="text" class="form-control"> <span class=" input-group-btn"><button
+                    class="btn btn-default" type="button">Go!
+            </button></span></div>
+        </div>
+    </div>
+</div>
+<ul class="nav nav-tabs nav-justified">
+    <li class="active"><a href="#">主页</a></li>
+    <li><a href="#">个人信息</a></li>
+    <li class="disabled"><a href="#">作品</a></li>
+    <li><a href="#">图书</a></li>
+</ul>
+
+<ul class="nav nav-pills nav-justified">
+    <li class="active"><a href="#">主页</a></li>
+    <li><a href="#">个人信息</a></li>
+    <li class="disabled"><a href="#">作品</a></li>
+    <li><a href="#">图书</a></li>
+</ul>
+
+
+<ul class="nav nav-pills nav-stacked">
+    <li class="active"><a href="#">主页</a></li>
+    <li><a href="#">个人信息</a></li>
+    <li><a href="#">作品</a></li>
+    <li><a href="#">图书</a></li>
+</ul>
+
+<div class="navbar navbar-default">
+    <nav class="navbar" role="navigation">
+        <div class="navbar-header"><a class="navbar-brand" href="#">Brand</a></div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="#">active</a></li>
+            <li><a href="#">Link</a></li>
+            <li class="disabled"><a href="#">disabled</a></li>
+            <li><a href="#">Link</a></li>
+        </ul>
+    </nav>
+
+    <div class="navbar-header navbar-default">
+        <!-- .navbar-toggle样式用于toggle收缩的内容，即：nav-collapse collapse样式所在的元素 -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <!-- 确保无论是宽屏还是窄屏，navbar-brand都会显示 -->
+        <a class="navbar-brand" href="#">Brand</a>
+    </div>
+
+
+    <!-- 屏幕宽度小于768像素时，该div内的内容默认都会隐藏(通过单击icon-bar所在的图标，  可以再展开);大于768像素时默认显示 -->
+    <div class="collapse navbar-collapse navbar-responsive-collapse">
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="#">主页</a></li>
+            <li><a href="#">作品</a></li>
+            <li><a href="#">图书</a></li>
+            <li class="dropdown">
+                <a data-toggle="dropdown" class="dropdown-toggle" href="#">下拉菜单<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">子菜单1</a></li>
+                    <li><a href="#">子菜单2</a></li>
+                    <!--省略菜单 -->
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<ul class="breadcrumb">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Library</a></li>
+    <li class="active">Data</li>
+</ul>
+
+<ul class="pagination">
+    <li><a href="#"><<</a></li>
+    <li><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">>></a></li>
+</ul>
+
+
+<ul class="pagination">
+    <li><a href="1">1</a></li>
+    <li><a href="2">2</a></li>
+    <li><a href="3">3</a></li>
+    <li><a href="4">4</a></li>
+    <li><a href="5">5</a></li>
+</ul>
+
+<h1>10个最好的JavaScript动画库和开发框架<span class="label">New</span></h1>
+
+<h2>10个最好的JavaScript动画库和开发框架<span class="label">New</span></h2>
+
+<h3>10个最好的JavaScript动画库和开发框架<span class="label">New</span></h3>
+
+<div class="page-header">
+    <h1>Example page header
+        <small> Subtext sfor header</small>
+    </h1>
+</div>
+
+<div class="alert">
+    <button type="button" class="close" data-dismiss="alert">×</button>
+    <strong>Warning!</strong> Best check yo self, you're not looking too good.
+</div>
+
+<!--一般定义-->
+<div class="progress">
+    <div class="progress-bar" style="width: 60%;"></div>
+</div>
+<!-- 带辅助阅读的定义-->
+<div class="progress">
+    <div class="progress-bar" style="width: 60%;" role="progressbar" aria-valuenow="60" aria-valuemin="0"
+         aria-valuemax="100">
+        <span class="sr-only">60% Complete</span>
+    </div>
+</div>
+
+<div class="progress progress-striped active">
+    <div class="progress-bar progress-bar-info" style="width: 20%"></div>
+</div>
+<div class="progress progress-striped">
+    <div class="progress-bar progress-bar-success" style="width: 40%"></div>
+</div>
+<div class="progress progress-striped">
+    <div class="progress-bar progress-bar-warning" style="width: 60%"></div>
+</div>
+<div class="progress progress-striped">
+    <div class="progress-bar progress-bar-danger" style="width: 80%"></div>
+</div>
+
+
+<div class="progress">
+    <div class="progress-bar progress-bar-success" style="width: 35%"></div>
+    <div class="progress-bar progress-bar-warning" style="width: 20%"></div>
+    <div class="progress-bar progress-bar-danger" style="width: 10%"></div>
+</div>
+
+<div class="list-group"><a class="list-group-item active" href="#"><h4 class="list-group-item-heading">
+    JavaScript编程精解</h4>
+
+    <p class="list-group-item-text">……</p></a> <a class="list-group-item" href="#"><h4 class="list-group-item-heading">
+    JavaScript设计模式</h4>
+
+    <p class="list-group-item-text">……</p></a> <a class="list-group-item" href="#"><h4 class="list-group-item-heading">
+    JavaScript启示录</h4>
+
+    <p class="list-group-item-text">……</p></a></div>
+
+<div class="panel panel-success">
+    <div class="panel-heading">面板header</div>
+    <div class="panel-body"> 这里是面板内容</div>
+    <div class="panel-footer">面板footer</div>
+</div>
+
+<!-- 触发元素 -->
+<button type="button" data-toggle="modal" data-backdrop="static"  data-target="#myModal" class="btn btn-primary">触发元素</button>
+<!-- 弹窗内容 -->
+<div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">Modal标题</h4>
+            </div>
+            <div class="modal-body"><p>这里是弹窗里的具体内容………</p></div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary">保存</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal2">
+    Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</html>
