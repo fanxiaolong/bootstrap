@@ -12,7 +12,7 @@
 
   // CSS TRANSITION SUPPORT (Shoutout: http://www.modernizr.com/)
   // ============================================================
-
+  //动画支持的浏览器事件
   function transitionEnd() {
     var el = document.createElement('bootstrap')
 
