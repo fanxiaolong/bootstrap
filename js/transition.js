@@ -14,8 +14,9 @@
   // ============================================================
   //动画支持的浏览器事件
   function transitionEnd() {
-    var el = document.createElement('bootstrap')
+    var el = document.createElement('bootstrap')  //创建一个新元素用于测试
 
+    /* 元素中可能的存在的事件对象字面量 */
     var transEndEventNames = {
       'WebkitTransition' : 'webkitTransitionEnd',
       'MozTransition'    : 'transitionend',
@@ -28,23 +29,20 @@
         return { end: transEndEventNames[name] }
       }
     }
-
+      //ie8直接返回false
     return false // explicit for ie8 (  ._.)
   }
 
   // http://blog.alexmaccaw.com/css-transitions
   $.fn.emulateTransitionEnd = function (duration) {
     var called = false, $el = this;
-    console.log($el);
 
-    $(this).one($.support.transition.end, function () { called = true })  //绑定事件
+    $(this).one($.support.transition.end, function () { called = true })  //绑定一次性事件
 
     var callback = function () {
-      console.log(called)
       if (!called) {
         $($el).trigger($.support.transition.end)  //触发事件
       }
-
     }
 
     setTimeout(callback, duration)
@@ -52,7 +50,7 @@
   }
 
   $(function () {
-    $.support.transition = transitionEnd()
+    $.support.transition = transitionEnd()  //浏览器所支持的 transitionend 事件对应的名称
   })
 
 }(jQuery);
