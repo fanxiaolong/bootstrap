@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="../dist/css/bootstrap.css" rel="stylesheet">
+    <link href="../dist/css/bootstrap-theme.css" rel="stylesheet">
+    <script src="../js/tests/vendor/jquery.js"></script>
+    <script src="../js/transition.js"></script>
+    <script src="../js/tooltip.js"></script>
+    <style>
+        .tooltip-box {
+            margin: 500px auto 5px;
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+<div class="tooltip-box">
+    <!--<button data-original-title="Tooltip on left" class="btn btn-default" data-toggle="tooltip" data-placement="left">
+        左侧Tooltip
+    </button>-->
+    <button data-original-title="Tooltip on top" class="btn" data-toggle="tooltip" data-placement="auto bottom" data-trigger="click">上方Tooltip
+    </button>
+    <!--<button data-original-title="Tooltip on bottom" class="btn" data-toggle="tooltip" data-placement="bottom">
+        下方Tooltip
+    </button>
+    <button data-original-title="Tooltip on right" class="btn" data-toggle="tooltip" data-placement="right">右侧Tooltip
+    </button>-->
+</div>
+<script>
+    $('[data-toggle = tooltip]').tooltip();
+</script>
+</body>
+</html>
