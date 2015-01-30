@@ -201,7 +201,7 @@
 
       // 计算更新placement样式后的位置
       var calculatedOffset = this.getCalculatedOffset(placement, pos, actualWidth, actualHeight)
-
+      // 再次应用更新的placement样式和位置
       this.applyPlacement(calculatedOffset, placement)
       this.hoverState = null
 
@@ -224,10 +224,12 @@
     var height = $tip[0].offsetHeight
 
     // manually read margins because getBoundingClientRect includes difference
+    // 手动获取margin值，因为使用getBoundingClientRect在不同的浏览器不准
     var marginTop = parseInt($tip.css('margin-top'), 10)
     var marginLeft = parseInt($tip.css('margin-left'), 10)
 
     // we must check for NaN for ie 8/9
+    // 在IE8、IE9下必须要判断值为NaN的情况
     if (isNaN(marginTop))  marginTop  = 0
     if (isNaN(marginLeft)) marginLeft = 0
 
@@ -245,12 +247,14 @@
       }
     }, offset), 0)
 
-    $tip.addClass('in')
+    $tip.addClass('in')  // 并添加in样式，用于显示
 
     // check to see if placing tip in new offset caused the tip to resize itself
+    // 检查tooltip在重新应用后，是否又自己重绘并改变大小了
     var actualWidth  = $tip[0].offsetWidth
     var actualHeight = $tip[0].offsetHeight
 
+    // 如果选择的是top，并且高度改变了，则重新更新offset
     if (placement == 'top' && actualHeight != height) {
       replace = true
       offset.top = offset.top + height - actualHeight
@@ -289,30 +293,31 @@
      *     $tip.find('.tooltip-inner').text(title)
      */
     $tip.find('.tooltip-inner')[this.options.html ? 'html' : 'text'](title)
-    $tip.removeClass('fade in top bottom left right')
+    $tip.removeClass('fade in top bottom left right')  // 如果有多余的样式，全部删除，后面会根据状态再添加
   }
 
+  // 关闭tooltip提示框
   Tooltip.prototype.hide = function () {
     var that = this
     var $tip = this.tip()
-    var e    = $.Event('hide.bs.' + this.type)
+    var e    = $.Event('hide.bs.' + this.type)  // 设置tooltip在开始关闭时触发的hide事件
 
     function complete() {
-      if (that.hoverState != 'in') $tip.detach()
+      if (that.hoverState != 'in') $tip.detach() // 如果当前元素没有in样式，直接移除tooltip
       that.$element.trigger('hidden.bs.' + that.type)
     }
 
-    this.$element.trigger(e)
+    this.$element.trigger(e)// 触发hide事件
 
-    if (e.isDefaultPrevented()) return
+    if (e.isDefaultPrevented()) return// 如果hide回调里阻止了继续操作，则返回
 
     $tip.removeClass('in')
 
-    $.support.transition && this.$tip.hasClass('fade') ?
+    $.support.transition && this.$tip.hasClass('fade') ? // 如果支持动画，并且在tooltip上添加fade样式
       $tip
-        .one($.support.transition.end, complete)
-        .emulateTransitionEnd(150) :
-      complete()
+        .one($.support.transition.end, complete) // 如果设置了动画，则在tooltip上添加fade样式
+        .emulateTransitionEnd(150) : // 延迟150毫秒才开始动画
+      complete()  // 否则直接关闭
 
     this.hoverState = null
 
@@ -321,11 +326,13 @@
   // 修复title提示，既有title，又有tooltip
   Tooltip.prototype.fixTitle = function () {
     var $e = this.$element
+      // 触发元素有title值，或者data-original-title属性不是字符串时
+      // 将title(或者空)赋值给data-original-title属性，然后再将title属性设置为空
     if ($e.attr('title') || typeof($e.attr('data-original-title')) != 'string') {
       $e.attr('data-original-title', $e.attr('title') || '').attr('title', '')
     }
   }
-
+  // 判断触发元素是拥有内容(及title值)，其调用了getTitle
   Tooltip.prototype.hasContent = function () {
     return this.getTitle()
   }
@@ -342,12 +349,12 @@
        * alert(box.getBoundingClientRect().left);        // 元素左边距离页面左边的距离
        *
        */
-    return $.extend({}, (typeof el.getBoundingClientRect == 'function') ? el.getBoundingClientRect() : {
+    return $.extend({}, (typeof el.getBoundingClientRect == 'function') ? el.getBoundingClientRect() : {  // 如果都获取不了，则返回默认的offset
       width: el.offsetWidth,
       height: el.offsetHeight
     }, this.$element.offset())
   }
-
+  //计算提示框的位置
   Tooltip.prototype.getCalculatedOffset = function (placement, pos, actualWidth, actualHeight) {
     return placement == 'bottom' ? { top: pos.top + pos.height,   left: pos.left + pos.width / 2 - actualWidth / 2  } :
            placement == 'top'    ? { top: pos.top - actualHeight, left: pos.left + pos.width / 2 - actualWidth / 2  } :
@@ -369,11 +376,11 @@
   Tooltip.prototype.tip = function () {
     return this.$tip = this.$tip || $(this.options.template)
   }
-
+// 查找小箭头元素
   Tooltip.prototype.arrow = function () {
     return this.$arrow = this.$arrow || this.tip().find('.tooltip-arrow')
   }
-
+// 验证元素释放合法
   Tooltip.prototype.validate = function () {
     if (!this.$element[0].parentNode) {
       this.hide()
@@ -381,26 +388,29 @@
       this.options  = null
     }
   }
-
+// 设置tooltip可用
   Tooltip.prototype.enable = function () {
     this.enabled = true
   }
-
+// 设置tooltip不可用
   Tooltip.prototype.disable = function () {
     this.enabled = false
   }
-
+// 反转tooltip显示/隐藏状态
   Tooltip.prototype.toggleEnabled = function () {
     this.enabled = !this.enabled
   }
 
   Tooltip.prototype.toggle = function (e) {
+      // 如果调用对象时触发元素，就查找该触发元素上的实例，否则就是this
     var self = e ? $(e.currentTarget)[this.type](this.getDelegateOptions()).data('bs.' + this.type) : this
+      // 如果tip上有in样式，就触发移出操作(leave)关闭tooltip;否则触发移入操作(enter)开启tooltip
     self.tip().hasClass('in') ? self.leave(self) : self.enter(self)
   }
-
+// 去除tooltip组件的绑定
   Tooltip.prototype.destroy = function () {
     clearTimeout(this.timeout)
+      // 去除.tooltip命名空间中所有的事件绑定，并移除tooltip实例(data-bs.tooltip)
     this.hide().$element.off('.' + this.type).removeData('bs.' + this.type)
   }
 
@@ -418,6 +428,7 @@
 
       if (!data && option == 'destroy') return
       if (!data) $this.data('bs.tooltip', (data = new Tooltip(this, options)))
+        // 如果option是字符串，说明传入的是一个方法，直接调用该方法
       if (typeof option == 'string') data[option]()
     })
   }
