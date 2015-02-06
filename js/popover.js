@@ -108,7 +108,7 @@
     })
   }
 
-  $.fn.popover.Constructor = Popover
+  $.fn.popover.Constructor = Popover  // 重设插件构造器，可以通过该属性获取插件的真实类函数
 
 
   // POPOVER NO CONFLICT
