@@ -13,33 +13,36 @@
             margin: 100px auto;
             text-align: center;
         }
-        #btn1 {
-            z-index: 9999 !important;
-        }
     </style>
 </head>
 <body>
-<!--<button type="button" class="btn btn-primary" data-toggle="button">反转状态</button>
+<button type="button" class="btn btn-primary" data-toggle="button">反转状态</button>
 
 <div class="btn-group" data-toggle="buttons">
     <label class="btn btn-primary"><input type="checkbox">选项1</label>
     <label class="btn btn-primary"><input type="checkbox">选项2</label>
     <label class="btn btn-primary"><input type="checkbox">选项3</label>
-</div>-->
+</div>
 <div class="btn-group" data-toggle="buttons">
     <label class="btn btn-primary active"><input type="radio" disabled name="options" id="option1">男</label>
     <label class="btn btn-primary"><input type="radio" name="options" id="option2">女</label>
     <label class="btn btn-primary"><input type="radio" name="options" id="option3">未知</label>
 </div>
-<!--<button type="button" id="btn1" class="btn btn-default" data-loading-text="正在加载...">获取内容</button>-->
+<!--
+   在Firefox浏览器上，如果一个按钮被禁用了（并且没有恢复），
+   那在刷新页面以后，禁用状态不会改变。所以为了解决这个问题，
+   只需要在按钮元素（或者按钮所在的表单元素）上，
+   添加一个自定义属性autocomplete="off"即可。
+-->
+<button type="button" id="btn1" class="btn btn-default" data-loading-text="正在加载..." autocomplete="off">获取内容</button>
 <script>
     // 触发代码
-    /*$(function () {
+    $(function () {
         $('#btn1').click(function () {
             var btn=$(this)
             btn.button('loading')
         });
-    });*/
+    });
     // 或者，可以直接调用button插件，不需要click事件
     //$('#btn1').button('loading');
 </script>
