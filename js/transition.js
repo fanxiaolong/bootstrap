@@ -38,10 +38,10 @@
     var called = false, $el = this;
 
     $(this).one($.support.transition.end, function () { called = true })  //绑定一次性事件
-
-    var callback = function () {
-      if (!called) {
-        $($el).trigger($.support.transition.end)  //触发事件
+                                  //                  ︽
+    var callback = function () { //                   ‖
+      if (!called) {            //                   ‖
+        $($el).trigger($.support.transition.end)  //触发事件，包括箭头（↑）的方向绑定的函数
       }
     }
 
