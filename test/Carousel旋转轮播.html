@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Carousel旋转轮播</title>
+    <link href="../dist/css/bootstrap.css" rel="stylesheet">
+    <link href="../dist/css/bootstrap-theme.css" rel="stylesheet">
+    <script src="../js/tests/vendor/jquery-1.11.2.js"></script>
+    <script src="../js/transition.js"></script>
+    <script src="../js/carousel.js"></script>
+    <style>
+        body {
+            margin     : 100px auto;
+            text-align : center;
+        }
+    </style>
+</head>
+<body>
+<div data-ride="carousel" class="carousel slide" id="carousel-container">
+    <!-- 图片容器 -->
+    <div class="carousel-inner">
+        <div class="item">
+            <img alt="第一张图" src="http://shougong.fn.img-space.com/g1/M00/03/58/Cg-4rFVi-PaIH1aEAADYUcUBP0cAAID0wHR-XEAANhp200.jpg" />
+            <div class="carousel-caption">
+                <h3>标题</h3>
+                <p>描述...</p>
+            </div>
+        </div>
+        <div class="item active"><img alt="第二张图" src="http://shougong.fn.img-space.com/g1/M00/03/58/Cg-4q1Vi-gWIX-tWAADuOwXxFfwAAID1QPNEhsAAO5T562.jpg" /></div>
+        <div class="item"><img alt="第三张图" src="http://shougong.fn.img-space.com/g1/M00/03/56/Cg-4q1VixoyIfeOBAADY6O0HDkwAAIDPwAboUQAANkA392.jpg" /></div>
+    </div>
+    <!-- 圆圈指示符 -->
+    <ol class="carousel-indicators">
+        <li data-slide-to="0" data-target="#carousel-container"></li>
+        <li data-slide-to="1" data-target="#carousel-container"></li>
+        <li data-slide-to="2" data-target="#carousel-container" class="active"></li>
+    </ol>
+    <!-- 左右控制按钮 -->
+    <a data-slide="prev" href="#carousel-container" class="left carousel-control">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a data-slide="next" href="#carousel-container" class="right carousel-control">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
+</div>
+</body>
+</html>
